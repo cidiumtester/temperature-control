@@ -2,22 +2,27 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+// 1) Reemplaza estas variables por useState, puedes utilizar los valores iniciales que ya traen las variables
+  let temperatureColor = 'cold'
+  let temperatureValue = '10'
+  
+// 2) Agregar las funciones para manejar los eventos de Click a los botones para que 
+//     cuando se presionen se incremente o decremente el valor de la temperatura. 
+
+// 3) Agrega una lógica para que al momento de que el valor sea >= 20 grados, la variable 'temperatureColor' cambie a 'hot'
+//    De igual manera si la temperatura baja a <20 grados, la variable cambie a 'cold'
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="temperature-display-container">
+        <div className={`temperature-display ${temperatureColor}`}>
+          {temperatureValue}°C
+        </div>
+      </div>
+      <div className="button-container">
+        <button >+</button>
+        <button >-</button>
+      </div>
     </div>
   );
 }
